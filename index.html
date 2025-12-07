@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Érica Garisto da Rocha | Psicóloga</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        /* ----- DESKTOP STYLES (ISOLATED) ----- */
+        #desktop-root {
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        #desktop-root .background-blur {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background-image: url('Site-Erica.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: blur(20px) brightness(0.8);
+            transform: scale(1.1);
+        }
+
+        #desktop-root .container {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #desktop-root .content-wrapper {
+            position: relative;
+            display: inline-block;
+            height: 100%;
+            width: auto;
+        }
+
+        #desktop-root .main-image {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: 100%;
+            /* Restore height 100% to fill screen vertically */
+            display: block;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+        }
+
+        @media (max-aspect-ratio: 16/9) {
+            #desktop-root .content-wrapper {
+                width: 100%;
+                height: auto;
+            }
+
+            #desktop-root .content-wrapper img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        #desktop-root .hotspot {
+            position: absolute;
+            z-index: 10;
+            background-color: transparent;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        #desktop-root .hotspot:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+        }
+
+        #desktop-root .email-link {
+            top: 87%;
+            left: 45%;
+            width: 16%;
+            height: 10%;
+        }
+
+        #desktop-root .phone-link {
+            top: 86%;
+            left: 67%;
+            width: 28%;
+            height: 9%;
+        }
+
+
+        /* ----- MOBILE STYLES (ISOLATED) ----- */
+        #mobile-root {
+            display: none;
+            /* Hidden by default */
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Generic shared logic for mobile structure if needed, or specific: */
+        #mobile-root .background-blur {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background-image: url('coelhos.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: blur(20px) brightness(0.8);
+            transform: scale(1.1);
+        }
+
+        #mobile-root .container {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #mobile-root .content-wrapper {
+            position: relative;
+            display: inline-block;
+            /* Mobile often portraits, so maybe width based? sticking to fit logic */
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        #mobile-root .main-image {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            display: block;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Mobile hotspots can share style or be distinct */
+        #mobile-root .hotspot {
+            position: absolute;
+            z-index: 10;
+            transition: all 0.3s ease;
+            /* DEBUG STYLE FOR MOBILE */
+            border: 3px solid rgba(255, 255, 255, 0.15);
+            background-color: transparent;
+        }
+
+        /* Initial guess for mobile phone link */
+        #mobile-root .phone-link {
+            top: 90%;
+            left: 25%;
+            width: 50%;
+            height: 7%;
+        }
+
+
+        /* ----- VIEW TOGGLE ----- */
+        @media (max-width: 768px) {
+            #desktop-root {
+                display: none !important;
+            }
+
+            #mobile-root {
+                display: flex !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- DESKTOP CONTAINER -->
+    <div id="desktop-root">
+        <div class="background-blur"></div>
+        <div class="container">
+            <div class="content-wrapper">
+                <img src="Site-Erica.jpg" alt="Érica Garisto da Rocha - Psicoterapeuta" class="main-image">
+                <a href="mailto:garisto.erica@unifesp.br" class="hotspot email-link" title="Enviar Email"></a>
+                <a href="https://wa.me/5511987993517" class="hotspot phone-link" title="Falar no WhatsApp"
+                    target="_blank"></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MOBILE CONTAINER -->
+    <div id="mobile-root">
+        <div class="background-blur"></div>
+        <div class="container">
+            <div class="content-wrapper">
+                <img src="coelhos.jpg" alt="Érica Garisto da Rocha" class="main-image">
+                <a href="https://wa.me/5511987993517" class="hotspot phone-link" title="Falar no WhatsApp"
+                    target="_blank"></a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
