@@ -1,222 +1,520 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Érica Garisto da Rocha | Psicóloga</title>
-    <style>
-        body,
-        html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            background-color: #000;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- SEO Meta Tags -->
+  <title>Érica Garisto da Rocha | Psicologia & Neuropsicologia</title>
+  <meta name="description" content="Érica Garisto da Rocha é psicóloga, neuropsicóloga e doutora em Psicobiologia pela UNIFESP. Atendimento clínico online focado em regulação emocional, cognição social e neurodivergências em adultos." />
+  <meta name="keywords" content="Érica Garisto da Rocha, Psicóloga, Neuropsicologia, Psicobiologia, UNIFESP, Autismo Adulto, Regulação Emocional, Terapia Online" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Érica Garisto da Rocha | Psicologia & Neuropsicologia" />
+  <meta property="og:description" content="Atendimento psicológico online especializado fundamentado nas neurociências e psicologia baseada em evidências." />
+  <meta property="og:image" content="erica.png" />
 
-        /* ----- DESKTOP STYLES (ISOLATED) ----- */
-        #desktop-root {
-            display: block;
-            width: 100%;
-            height: 100%;
-            position: relative;
-        }
-
-        #desktop-root .background-blur {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            background-image: url('Site-Erica.jpg');
-            background-size: cover;
-            background-position: center;
-            filter: blur(20px) brightness(0.8);
-            transform: scale(1.1);
-        }
-
-        #desktop-root .container {
-            position: relative;
-            z-index: 2;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        #desktop-root .content-wrapper {
-            position: relative;
-            display: inline-block;
-            height: 100%;
-            width: auto;
-        }
-
-        #desktop-root .main-image {
-            max-width: 100%;
-            max-height: 100%;
-            width: auto;
-            height: 100%;
-            /* Restore height 100% to fill screen vertically */
-            display: block;
-            box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
-        }
-
-        @media (max-aspect-ratio: 16/9) {
-            #desktop-root .content-wrapper {
-                width: 100%;
-                height: auto;
-            }
-
-            #desktop-root .content-wrapper img {
-                width: 100%;
-                height: auto;
-            }
-        }
-
-        #desktop-root .hotspot {
-            position: absolute;
-            z-index: 10;
-            background-color: transparent;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-
-        #desktop-root .hotspot:hover {
-            background-color: rgba(255, 255, 255, 0.15);
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-            cursor: pointer;
-        }
-
-        #desktop-root .email-link {
-            top: 87%;
-            left: 45%;
-            width: 16%;
-            height: 10%;
-        }
-
-        #desktop-root .phone-link {
-            top: 86%;
-            left: 67%;
-            width: 28%;
-            height: 9%;
-        }
-
-
-        /* ----- MOBILE STYLES (ISOLATED) ----- */
-        #mobile-root {
-            display: none;
-            /* Hidden by default */
-            width: 100%;
-            height: 100%;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Generic shared logic for mobile structure if needed, or specific: */
-        #mobile-root .background-blur {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            background-image: url('coelhos.jpg');
-            background-size: cover;
-            background-position: center;
-            filter: blur(20px) brightness(0.8);
-            transform: scale(1.1);
-        }
-
-        #mobile-root .container {
-            position: relative;
-            z-index: 2;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        #mobile-root .content-wrapper {
-            position: relative;
-            display: inline-block;
-            /* Mobile often portraits, so maybe width based? sticking to fit logic */
-            max-width: 100%;
-            max-height: 100%;
-        }
-
-        #mobile-root .main-image {
-            max-width: 100%;
-            max-height: 100%;
-            width: auto;
-            height: auto;
-            display: block;
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Mobile hotspots can share style or be distinct */
-        #mobile-root .hotspot {
-            position: absolute;
-            z-index: 10;
-            transition: all 0.3s ease;
-            /* DEBUG STYLE FOR MOBILE */
-            border: 3px solid rgba(255, 255, 255, 0.15);
-            background-color: transparent;
-        }
-
-        /* Initial guess for mobile phone link */
-        #mobile-root .phone-link {
-            top: 90%;
-            left: 25%;
-            width: 50%;
-            height: 7%;
-        }
-
-
-        /* ----- VIEW TOGGLE ----- */
-        @media (max-width: 768px) {
-            #desktop-root {
-                display: none !important;
-            }
-
-            #mobile-root {
-                display: flex !important;
-            }
-        }
-    </style>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+  
+  <!-- Favicon / Mini icon representation -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
 </head>
-
 <body>
-    <!-- DESKTOP CONTAINER -->
-    <div id="desktop-root">
-        <div class="background-blur"></div>
-        <div class="container">
-            <div class="content-wrapper">
-                <img src="Site-Erica.jpg" alt="Érica Garisto da Rocha - Psicoterapeuta" class="main-image">
-                <a href="mailto:garisto.erica@unifesp.br" class="hotspot email-link" title="Enviar Email"></a>
-                <a href="https://wa.me/5511987993517" class="hotspot phone-link" title="Falar no WhatsApp"
-                    target="_blank"></a>
-            </div>
-        </div>
-    </div>
 
-    <!-- MOBILE CONTAINER -->
-    <div id="mobile-root">
-        <div class="background-blur"></div>
-        <div class="container">
-            <div class="content-wrapper">
-                <img src="coelhos.jpg" alt="Érica Garisto da Rocha" class="main-image">
-                <a href="https://wa.me/5511987993517" class="hotspot phone-link" title="Falar no WhatsApp"
-                    target="_blank"></a>
-            </div>
-        </div>
+  <!-- ==========================================
+       HEADER & NAVIGATION
+       ========================================== -->
+  <header>
+    <div class="container">
+      <a href="#" class="logo-link">
+        <span class="logo-title">Érica Garisto</span>
+        <span class="logo-sub">
+          <span class="text-clinical">Psicologia & Neurociência</span>
+          <span class="text-coelho">Terapia de Orelhas em Pé 🐰</span>
+        </span>
+      </a>
+
+      <!-- Hamburger menu toggle for mobile -->
+      <button class="menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav>
+        <ul class="nav-menu">
+          <li>
+            <a href="#sobre-mim" class="nav-link">
+              <span class="text-clinical">Sobre Mim</span>
+              <span class="text-coelho">Sobre a Horta</span>
+            </a>
+          </li>
+          <li>
+            <a href="#atuacao" class="nav-link">
+              <span class="text-clinical">Áreas de Atuação</span>
+              <span class="text-coelho">Campos de Salto</span>
+            </a>
+          </li>
+          <li>
+            <a href="#como-funciona" class="nav-link">
+              <span class="text-clinical">Como Funciona</span>
+              <span class="text-coelho">Como Funciona o Salto</span>
+            </a>
+          </li>
+          <li>
+            <a href="#contato" class="nav-link">
+              <span class="text-clinical">Contato</span>
+              <span class="text-coelho">Fale Conosco</span>
+            </a>
+          </li>
+          <li>
+            <!-- Navbar theme trigger -->
+            <button class="bunny-header-btn bunny-toggle-trigger" title="Alternar Modo Coelho">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 2a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z" />
+                <path d="M15 2a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z" />
+                <path d="M12 10a5 5 0 0 1 5 5v3a3 3 0 0 1-3 3H10a3 3 0 0 1-3-3v-3a5 5 0 0 1 5-5z" />
+                <circle cx="12" cy="14" r="0.5" fill="currentColor" />
+                <line x1="10" y1="14" x2="8" y2="13.5" />
+                <line x1="10" y1="15" x2="8" y2="15.5" />
+                <line x1="14" y1="14" x2="16" y2="13.5" />
+                <line x1="14" y1="15" x2="16" y2="15.5" />
+                <circle cx="6" cy="18" r="1.5" />
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </nav>
     </div>
+  </header>
+
+  <!-- ==========================================
+       HERO SECTION
+       ========================================== -->
+  <section class="hero" id="inicio">
+    <div class="container hero-grid">
+      <div class="hero-text-content reveal-left">
+        <span class="badge">
+          <span class="text-clinical">Psicologia baseada em evidências</span>
+          <span class="text-coelho">Psicologia dos Coelhos & Cenouraterapia 🐰</span>
+        </span>
+        
+        <h1 class="hero-title">
+          <span class="text-clinical">Apoio especializado para a sua regulação emocional</span>
+          <span class="text-coelho">Aprenda a não roer as unhas (e os móveis da toca)</span>
+        </h1>
+        
+        <p class="hero-description">
+          <span class="text-clinical">Olá, sou a Érica. Sou psicóloga clínica, neuropsicóloga e doutora em Psicobiologia pela UNIFESP (título obtido em 2026). Ajudo adultos e pessoas neurodivergentes a compreenderem sua mente, desenvolverem empatia e adaptarem-se com acolhimento.</span>
+          <span class="text-coelho">Olá! Aqui é a Érica em versão orelhuda. Sou especialista em toquinhas confortáveis e saltos seguros. Se a ansiedade da horta está grande, ou se você está pulando sem rumo, vamos conversar e saborear algumas cenouras virtuais!</span>
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#" class="btn btn-primary whatsapp-link" target="_blank">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.458L0 24zm6.59-4.846c1.6.95 3.182 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.864.002-2.637-1.023-5.117-2.887-6.981-1.864-1.864-4.348-2.89-6.986-2.891-5.439 0-9.865 4.424-9.869 9.87-.001 1.745.469 3.447 1.362 4.966l-.995 3.637 3.753-.984zm11.087-7.466c-.29-.145-1.716-.848-1.978-.943-.262-.096-.453-.145-.642.145-.19.29-.733.943-.898 1.133-.166.19-.332.215-.622.07-1.365-.688-2.26-1.205-3.155-2.74-.236-.405-.07-.624.075-.767.13-.13.29-.34.437-.51.145-.17.193-.29.29-.485.097-.195.048-.364-.025-.51-.072-.145-.642-1.547-.88-2.12-.23-.558-.464-.482-.642-.491-.166-.008-.356-.01-.546-.01-.19 0-.5.07-.762.356-.262.29-1 .978-1 2.387s1.023 2.766 1.166 2.956c.143.19 2.015 3.076 4.883 4.316.682.295 1.214.47 1.629.602.685.217 1.307.186 1.8.113.55-.082 1.716-.702 1.958-1.38.243-.678.243-1.258.172-1.38-.072-.12-.262-.19-.553-.335z"/>
+            </svg>
+            <span class="text-clinical">Agendar uma Consulta</span>
+            <span class="text-coelho">Agendar meu Salto 🥕</span>
+          </a>
+          <a href="#sobre-mim" class="btn btn-outline">
+            <span class="text-clinical">Conhecer Érica</span>
+            <span class="text-coelho">Conhecer a Horta</span>
+          </a>
+        </div>
+
+        <div class="hero-badges">
+          <a href="http://lattes.cnpq.br/6988335082659206" class="badge-link" target="_blank" title="Ver Currículo Lattes">
+            <svg viewBox="0 0 24 24" width="16" height="16">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+            </svg>
+            <span>Currículo Lattes</span>
+          </a>
+          <a href="https://www.linkedin.com/in/%C3%A9rica-garisto-da-rocha-7846ba229/" class="badge-link" target="_blank" title="Ver LinkedIn">
+            <svg viewBox="0 0 24 24" width="16" height="16">
+              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.8v8.37h2.8v-4.67c0-.25.02-.5.1-.68a1.14 1.14 0 0 1 1-.77c.76 0 1 .56 1 .77v5.35h2.8M6.5 8.37a1.37 1.37 0 1 0 0-2.75 1.37 1.37 0 0 0 0 2.75M8 18.5V10.13H5.2V18.5H8z"/>
+            </svg>
+            <span>LinkedIn</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-image-wrapper reveal">
+        <div class="image-frame">
+          <!-- Image layers for smooth crossfade -->
+          <img src="erica.png" alt="Foto de Érica Garisto da Rocha" class="image-layer img-clinical" />
+          <img src="coelhos.jpg" alt="Coelhos na grama" class="image-layer img-coelho" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       ABOUT SECTION
+       ========================================== -->
+  <section class="section about" id="sobre-mim">
+    <div class="container">
+      <h2 class="section-title reveal">
+        <span class="text-clinical">Minha Trajetória Profissional</span>
+        <span class="text-coelho">Sobre a Dona da Horta</span>
+      </h2>
+      <p class="section-subtitle reveal">
+        <span class="text-clinical">Aliando prática clínica humanizada e sólida pesquisa acadêmica para oferecer o melhor cuidado.</span>
+        <span class="text-coelho">Combinando plantio de cenouras e mapas de tocas confortáveis para coelhinhos assustados.</span>
+      </p>
+
+      <div class="about-grid">
+        <!-- Card 1: Formação -->
+        <div class="about-card reveal-left">
+          <div class="card-header-with-icon">
+            <div class="card-icon">
+              <span class="text-clinical">🎓</span>
+              <span class="text-coelho">🥕</span>
+            </div>
+            <h3>
+              <span class="text-clinical">Formação Acadêmica</span>
+              <span class="text-coelho">Origem dos Pulos</span>
+            </h3>
+          </div>
+          <ul>
+            <li>
+              <span class="text-clinical"><strong>Doutora em Psicobiologia (2026)</strong> – Universidade Federal de São Paulo (UNIFESP)</span>
+              <span class="text-coelho"><strong>Doutora em Horta Orgânica (2026)</strong> – Pela UNIFESP das Cenouras</span>
+            </li>
+            <li>
+              <span class="text-clinical"><strong>Especialista em Neuropsicologia Clínica</strong> – Avaliação e Reabilitação Cognitiva</span>
+              <span class="text-coelho"><strong>Doutora em Pulos Coordenados</strong> – Para evitar sustos com arbustos</span>
+            </li>
+            <li>
+              <span class="text-clinical"><strong>Bacharel em Psicologia</strong> – Centro Universitário UNIFAAT</span>
+              <span class="text-coelho"><strong>Escavadora de Tocas Graduada</strong> – Pela UNIFAAT da Floresta</span>
+            </li>
+            <li>
+              <span class="text-clinical"><strong>Pesquisadora ativa</strong> nas áreas de autismo, cognição social e empatia</span>
+              <span class="text-coelho"><strong>Estudiosa dedicada</strong> de orelhas trêmulas e convivência na clareira</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Card 2: Abordagem -->
+        <div class="about-card reveal-right">
+          <div class="card-header-with-icon">
+            <div class="card-icon">
+              <span class="text-clinical">🔬</span>
+              <span class="text-coelho">🏡</span>
+            </div>
+            <h3>
+              <span class="text-clinical">Abordagem & Prática</span>
+              <span class="text-coelho">Filosofia da Toca</span>
+            </h3>
+          </div>
+          <p class="text-clinical">
+            Meu atendimento clínico é fundamentado nas <strong>neurociências</strong> e na <strong>psicologia baseada em evidências</strong>. Desenvolvo pesquisas ativas sobre cognição social e empatia, especialmente voltadas ao diagnóstico e acompanhamento de adultos no espectro autista (TEA) e outras neurodivergências. Busco sempre construir um espaço terapêutico acolhedor, seguro e focado na autonomia.
+          </p>
+          <p class="text-coelho">
+            Meu atendimento utiliza a <strong>cenoura comportamental</strong> para acalmar narizes nervosos. Minhas pesquisas analisam por que alguns coelhinhos insistem em se esconder na toca diante de novos desafios e como podemos construir saídas seguras sem medo dos gaviões da vida. Aqui, as orelhas caídas ganham força e as toquinhas são acolhedoras e silenciosas.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       AREAS OF ACTION / EXPERTISE
+       ========================================== -->
+  <section class="section" id="atuacao">
+    <div class="container">
+      <h2 class="section-title reveal">
+        <span class="text-clinical">Áreas de Atuação</span>
+        <span class="text-coelho">Campos de Salto</span>
+      </h2>
+      <p class="section-subtitle reveal">
+        <span class="text-clinical">Tratamentos especializados conduzidos com acolhimento terapêutico online.</span>
+        <span class="text-coelho">Treinamentos especializados para coelhos de todas as tocas.</span>
+      </p>
+
+      <div class="expertise-grid">
+        <!-- Item 1 -->
+        <div class="expertise-item reveal delay-1">
+          <div class="expertise-bullet"></div>
+          <span class="expertise-text">
+            <span class="text-clinical">Regulação Emocional</span>
+            <span class="text-coelho">Treino para Nariz Trêmulo</span>
+          </span>
+        </div>
+        <!-- Item 2 -->
+        <div class="expertise-item reveal delay-2">
+          <div class="expertise-bullet"></div>
+          <span class="expertise-text">
+            <span class="text-clinical">Transtorno do Espectro Autista (TEA)</span>
+            <span class="text-coelho">Coelhos de Orelha Caída (Autismo)</span>
+          </span>
+        </div>
+        <!-- Item 3 -->
+        <div class="expertise-item reveal delay-3">
+          <div class="expertise-bullet"></div>
+          <span class="expertise-text">
+            <span class="text-clinical">Neuropsicologia Clínica</span>
+            <span class="text-coelho">Neurologia do Pulo Rápido</span>
+          </span>
+        </div>
+        <!-- Item 4 -->
+        <div class="expertise-item reveal delay-1">
+          <div class="expertise-bullet"></div>
+          <span class="expertise-text">
+            <span class="text-clinical">Desenvolvimento de Empatia</span>
+            <span class="text-coelho">Empatia na Divisão de Cenouras</span>
+          </span>
+        </div>
+        <!-- Item 5 -->
+        <div class="expertise-item reveal delay-2">
+          <div class="expertise-bullet"></div>
+          <span class="expertise-text">
+            <span class="text-clinical">Ansiedade e Estresse</span>
+            <span class="text-coelho">Susto por Barulho de Arbusto</span>
+          </span>
+        </div>
+        <!-- Item 6 -->
+        <div class="expertise-item reveal delay-3">
+          <div class="expertise-bullet"></div>
+          <span class="expertise-text">
+            <span class="text-clinical">Adaptação e Imigração (Exterior)</span>
+            <span class="text-coelho">Mudança para Novas Tocas Distantes</span>
+          </span>
+        </div>
+        <!-- Item 7 -->
+        <div class="expertise-item reveal delay-1">
+          <div class="expertise-bullet"></div>
+          <span class="expertise-text">
+            <span class="text-clinical">Desenvolvimento Pessoal</span>
+            <span class="text-coelho">Alongamento de Orelhas & Autoconhecimento</span>
+          </span>
+        </div>
+        <!-- Item 8 -->
+        <div class="expertise-item reveal delay-2">
+          <div class="expertise-bullet"></div>
+          <span class="expertise-text">
+            <span class="text-clinical">Orientação Familiar</span>
+            <span class="text-coelho">Conversa de Toca (Apoio Familiar)</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       HOW ONLINE THERAPY WORKS
+       ========================================== -->
+  <section class="section online-therapy" id="como-funciona">
+    <div class="container">
+      <h2 class="section-title reveal">
+        <span class="text-clinical">Como Funciona a Terapia Online?</span>
+        <span class="text-coelho">Como Funciona o Salto Virtual?</span>
+      </h2>
+      <p class="section-subtitle reveal">
+        <span class="text-clinical">A mesma eficácia e rigor ético do atendimento presencial, no conforto da sua rotina.</span>
+        <span class="text-coelho">Mesma qualidade das cenouras colhidas na hora, sem precisar sair da sua toca predileta.</span>
+      </p>
+
+      <div class="therapy-steps">
+        <!-- Step 1 -->
+        <div class="step-card reveal-left delay-1">
+          <div class="step-num">1</div>
+          <h3>
+            <span class="text-clinical">Contato Inicial</span>
+            <span class="text-coelho">Sinal de Fumaça</span>
+          </h3>
+          <p>
+            <span class="text-clinical">Você clica no botão e fala diretamente comigo pelo WhatsApp. Agendamos o melhor dia e horário para a sua consulta inicial.</span>
+            <span class="text-coelho">Bata as patinhas no teclado e mande um Zap. Encontraremos um momento tranquilo e sem gaviões para nossa primeira conversa.</span>
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step-card reveal delay-2">
+          <div class="step-num">2</div>
+          <h3>
+            <span class="text-clinical">Conexão Segura</span>
+            <span class="text-coelho">Entrando na Toca</span>
+          </h3>
+          <p>
+            <span class="text-clinical">As sessões são realizadas por videochamadas criptografadas através do Google Meet. O sigilo profissional e a privacidade são absolutos.</span>
+            <span class="text-coelho">Entramos na nossa toquinha do Google Meet com um clique. Orelhas seguras e privacidade total para conversarmos à vontade.</span>
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step-card reveal-right delay-3">
+          <div class="step-num">3</div>
+          <h3>
+            <span class="text-clinical">Evolução Contínua</span>
+            <span class="text-coelho">Crescendo Lindo</span>
+          </h3>
+          <p>
+            <span class="text-clinical">Desenvolvemos estratégias práticas e personalizadas baseadas em ciência para o manejo de crises e autoconhecimento.</span>
+            <span class="text-coelho">Pratique novos saltos, aprenda a mastigar pensamentos difíceis e viva feliz na sua clareira verde.</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="therapy-info-banner reveal">
+        <div class="info-banner-icon">💡</div>
+        <div class="info-banner-text">
+          <p>
+            <span class="text-clinical"><strong>O que você precisa:</strong> Apenas de uma conexão estável à internet, um celular ou computador, fones de ouvido para privacidade e um local silencioso.</span>
+            <span class="text-coelho"><strong>O que você precisa:</strong> Uma boa internet para o sinal de vídeo, um fone de ouvido para gaviões não escutarem, e sua toquinha silenciosa!</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       RESEARCH & ACADEMIC HIGHLIGHT
+       ========================================== -->
+  <section class="section">
+    <div class="container research-container">
+      <div class="reveal-left">
+        <span class="badge">
+          <span class="text-clinical">Ciência & Pesquisa</span>
+          <span class="text-coelho">Estudos da Horta</span>
+        </span>
+        <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">
+          <span class="text-clinical">A Ciência aplicada à Clínica</span>
+          <span class="text-coelho">Ciência do Pulo Científico</span>
+        </h2>
+        <p style="margin-bottom: 2rem; font-size: 1.1rem;">
+          <span class="text-clinical">Minha atuação não é apenas de consultório: conduzo pesquisas ativas vinculadas à UNIFESP, trazendo as descobertas científicas mais recentes para o processo terapêutico.</span>
+          <span class="text-coelho">Não somos apenas comedores de mato! Nossos saltos e tocas são baseados em estudos avançados de comportamento e neurociência das cenouras na UNIFESP.</span>
+        </p>
+        <a href="http://lattes.cnpq.br/6988335082659206" class="btn btn-outline" target="_blank">
+          <span class="text-clinical">Ver Currículo Lattes</span>
+          <span class="text-coelho">Ver Mapa da Horta (Lattes)</span>
+        </a>
+      </div>
+
+      <div class="research-list reveal-right">
+        <div class="research-item">
+          <h4>
+            <span class="text-clinical">Cognição Social no Autismo</span>
+            <span class="text-coelho">Interação entre Coelhos Orelhudos</span>
+          </h4>
+          <p>
+            <span class="text-clinical">Investigação científica de aspectos como regulação emocional, empatia e habilidades sociais em adultos diagnosticados com TEA.</span>
+            <span class="text-coelho">Como os coelhos dividem a grama, se reconhecem na floresta e entendem quando o outro está triste.</span>
+          </p>
+        </div>
+
+        <div class="research-item">
+          <h4>
+            <span class="text-clinical">Adaptação de Emigrantes</span>
+            <span class="text-coelho">Coelhos em Novas Florestas</span>
+          </h4>
+          <p>
+            <span class="text-clinical">Estudo sobre as influências da aculturação e mudanças ambientais na cognição social de brasileiros que vivem no exterior.</span>
+            <span class="text-coelho">O que acontece quando mudamos de horta e precisamos aprender a falar com os esquilos e castores.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       CONTACT / CALL TO ACTION BANNER
+       ========================================== -->
+  <section class="section" id="contato" style="padding-bottom: 4rem;">
+    <div class="container">
+      <div class="contact-banner-sec reveal">
+        <h2>
+          <span class="text-clinical">Vamos agendar a sua primeira sessão?</span>
+          <span class="text-coelho">Hora de dar um pulo na sua vida!</span>
+        </h2>
+        <p>
+          <span class="text-clinical">Entre em contato pelo WhatsApp para tirar dúvidas sobre valores, horários e iniciar seu acompanhamento psicológico.</span>
+          <span class="text-coelho">Mande mensagem agora na nossa horta e marque seu salto! Prometo que teremos conversas incríveis.</span>
+        </p>
+        <div class="contact-buttons-wrapper">
+          <a href="#" class="btn btn-gold whatsapp-link" target="_blank">
+            <span class="text-clinical">Falar no WhatsApp</span>
+            <span class="text-coelho">Saltar para o WhatsApp 🥕</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3 style="font-family: var(--font-title);">Érica Garisto da Rocha</h3>
+          <p>
+            <span class="text-clinical">Psicóloga Clínica & Neuropsicóloga. Atendimento ético, confidencial e embasado em evidências científicas.</span>
+            <span class="text-coelho">Especialista em orelhas em pé, cenouras suculentas e tocas sem gavião. Venha pular feliz!</span>
+          </p>
+          <div class="footer-socials">
+            <a href="https://www.linkedin.com/in/%C3%A9rica-garisto-da-rocha-7846ba229/" class="social-circle-btn" target="_blank" title="LinkedIn">
+              <svg viewBox="0 0 24 24" width="20" height="20">
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.8v8.37h2.8v-4.67c0-.25.02-.5.1-.68a1.14 1.14 0 0 1 1-.77c.76 0 1 .56 1 .77v5.35h2.8M6.5 8.37a1.37 1.37 0 1 0 0-2.75 1.37 1.37 0 0 0 0 2.75M8 18.5V10.13H5.2V18.5H8z"/>
+              </svg>
+            </a>
+            <a href="http://lattes.cnpq.br/6988335082659206" class="social-circle-btn" target="_blank" title="Currículo Lattes">
+              <svg viewBox="0 0 24 24" width="20" height="20">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-links-title">Navegação</h4>
+          <ul class="footer-links-list">
+            <li><a href="#inicio" class="footer-link">Início</a></li>
+            <li><a href="#sobre-mim" class="footer-link">Sobre Mim</a></li>
+            <li><a href="#atuacao" class="footer-link">Áreas de Atuação</a></li>
+            <li><a href="#como-funciona" class="footer-link">Como Funciona</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Compliance and Crisis warning -->
+      <div class="footer-emergency-warning">
+        <p>
+          <strong>Importante:</strong> Se você ou alguém que você conhece está passando por uma crise grave ou risco de vida, procure ajuda imediata. Ligue <strong>188</strong> (Centro de Valorização da Vida - <a href="https://www.cvv.org.br/" target="_blank">CVV</a>) ou <strong>192</strong> (SAMU). O atendimento psicoterapêutico clínico agendado não é adequado para situações emergenciais de crise.
+        </p>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Érica Garisto da Rocha. Todos os direitos reservados.</span>
+        <span>CRP 06/XXXXX-X (São Paulo - Ativo) | Psicologia Baseada em Evidências</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================
+       RABBIT FLOATING BUTTON (BUNNY THEME TOGGLE)
+       ========================================== -->
+  <button class="bunny-toggle-floating bunny-toggle-trigger" aria-label="Ativar Modo Coelho" title="Alternar Modo Coelho 🐰">
+    <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M10 2a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z" />
+      <path d="M15 2a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z" />
+      <path d="M12 10a5 5 0 0 1 5 5v3a3 3 0 0 1-3 3H10a3 3 0 0 1-3-3v-3a5 5 0 0 1 5-5z" />
+      <circle cx="12" cy="14" r="0.5" fill="currentColor" />
+      <line x1="10" y1="14" x2="8" y2="13.5" />
+      <line x1="10" y1="15" x2="8" y2="15.5" />
+      <line x1="14" y1="14" x2="16" y2="13.5" />
+      <line x1="14" y1="15" x2="16" y2="15.5" />
+      <circle cx="6" cy="18" r="1.5" />
+    </svg>
+    <div class="bunny-tooltip">Modo Coelho 🐰</div>
+  </button>
+
+  <!-- Script link -->
+  <script src="script.js"></script>
 </body>
-
 </html>
