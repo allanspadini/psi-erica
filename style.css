@@ -985,12 +985,12 @@ body.coelho-mode .footer-bottom {
 /* ==========================================
    RABBIT FLOATING TRIGGER BUTTON (BUNNY SWAP)
    ========================================== */
-.bunny-toggle-floating {
+.whatsapp-floating {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
   z-index: 999;
-  background-color: var(--gold-color);
+  background-color: #25D366;
   color: #fff;
   width: 60px;
   height: 60px;
@@ -998,67 +998,27 @@ body.coelho-mode .footer-bottom {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--shadow-lg);
-  border: none;
-  cursor: pointer;
-  outline: none;
-  transition: var(--transition-theme), transform 0.3s ease;
-  animation: float-bunny 4s ease-in-out infinite;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  animation: float-whatsapp 4s ease-in-out infinite;
 }
 
-.bunny-toggle-floating:hover {
+.whatsapp-floating:hover {
   transform: scale(1.1) rotate(5deg);
-  background-color: var(--accent-color);
+  background-color: #20ba56;
+  color: #fff;
 }
 
-.bunny-toggle-floating svg {
+.whatsapp-floating svg {
   fill: currentColor;
-  transition: transform 0.3s ease;
 }
 
-.bunny-toggle-floating:hover svg {
-  animation: hop-bunny 0.5s ease-in-out infinite alternate;
-}
-
-/* Tooltip */
-.bunny-tooltip {
-  position: absolute;
-  right: 75px;
-  background-color: var(--text-primary);
-  color: var(--bg-primary);
-  padding: 0.5rem 1rem;
-  border-radius: var(--border-radius-sm);
-  font-size: 0.8rem;
-  font-weight: 500;
-  white-space: nowrap;
-  pointer-events: none;
-  opacity: 0;
-  transform: translateX(10px);
-  transition: var(--transition-interactive);
-  box-shadow: var(--shadow-md);
-}
-
-.bunny-toggle-floating:hover .bunny-tooltip {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* Animation keyframes */
-@keyframes float-bunny {
+@keyframes float-whatsapp {
   0%, 100% {
     transform: translateY(0);
   }
   50% {
     transform: translateY(-8px);
-  }
-}
-
-@keyframes hop-bunny {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(-6px);
   }
 }
 
