@@ -1027,24 +1027,33 @@ body.coelho-mode .footer-bottom {
   background-color: var(--accent-light);
   color: var(--accent-color);
   border: none;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  display: flex;
+  height: 40px;
+  border-radius: var(--border-radius-pill);
+  padding: 0 1.2rem;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: var(--transition-theme), transform 0.3s ease;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: var(--transition-theme), transform 0.3s ease, background-color 0.3s ease;
 }
 
 .bunny-header-btn:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   background-color: var(--accent-color);
   color: #fff;
 }
 
+.bunny-header-btn span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .bunny-header-btn svg {
-  fill: currentColor;
+  flex-shrink: 0;
 }
 
 /* ==========================================
