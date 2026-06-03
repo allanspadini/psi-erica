@@ -116,6 +116,7 @@ p {
   font-weight: 300;
   color: var(--text-secondary);
   transition: var(--transition-theme);
+  text-align: justify;
 }
 
 /* Dynamic text switcher (Clínico vs Coelho) */
@@ -243,6 +244,20 @@ body.coelho-mode h3.text-coelho {
 .btn-outline:hover {
   background-color: var(--accent-light);
   transform: translateY(-2px);
+}
+
+.btn-email {
+  background-color: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #fff;
+  box-shadow: none;
+}
+
+.btn-email:hover {
+  background-color: rgba(255, 255, 255, 0.22);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  color: #fff;
 }
 
 /* ==========================================
@@ -1142,6 +1157,15 @@ body.coelho-mode .footer-bottom {
 }
 
 @media (max-width: 768px) {
+  .logo-title {
+    font-size: 1.15rem;
+  }
+  
+  .logo-sub {
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+  }
+
   /* Toggle navbar */
   .menu-toggle {
     display: block;
